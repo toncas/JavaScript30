@@ -64,7 +64,7 @@
       top:50%;
       transform-origin: 100%;
       transform: rotate(90deg);
-      transition: all 0.5s;
+      transition: none;
       transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
     }
 
@@ -88,7 +88,7 @@
       minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
       hourHand.style.transform = `rotate(${hourDegrees}deg)`;
 
-      console.log(`${hour}:${minute}:${second}`)
+      console.log(`${hour}:${minute}:${second}`);
     }
 
     setInterval(setDate, 1000);
