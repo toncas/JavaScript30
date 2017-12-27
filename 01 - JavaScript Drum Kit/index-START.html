@@ -62,25 +62,19 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-  //listen for a keydown event
-  //identify the keycode
-  //if keycode matches one of the data-key divs then
-    //find the audio with the matching data-key
-    //play the audio
-    //add 'playing' class to the divs
-    //remove 'playing class after transition.
   $(document).ready(function(){
-
     $('body').keydown(function(event){
       var keycode = event.keyCode;
       var audio = $('audio').filter(function(index){
         return $(this).data('key') === keycode;
       })[0];
 
-      if(!audio) return;
-
-      audio.currentTime = 0;
-      audio.play();
+      if(!audio){
+        return;
+      }else{
+        audio.currentTime = 0;
+        audio.play();
+      }
 
       $('.key').filter(function(index){
         return $(this).data('key') === keycode;
